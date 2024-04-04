@@ -1,0 +1,42 @@
+<section>
+    <div class="img-box">
+        <img src="../../assets/images/default.png" alt="">
+    </div>
+    <div class="step-1">
+        <div class="header">
+            <button class="back" routerLink="/step2">
+                <img src="../../assets/images/arrow_back_ios_24px.png" alt=""> Back
+            </button>
+            <div class="header-comp">
+                <p>STEP 03/03</p>
+                <p class="personal-inf">Bank Verification</p>
+            </div>
+        </div>
+
+        <div class="complete-form">
+            <h1>Complete Your Profile!</h1>
+            <p>For the purpose of industry regulation, your details are required.</p>
+            <div class="line-box"></div>
+
+            <form action="" [formGroup]="thirdStepForm" (ngSubmit)="onFinal()">
+                <div class="verification">
+                    <div class="label-fix">
+                        <label>Bank verification number (BVN)</label>
+                        <ng-select formControlName="verification" [items]="items" bindLabel="name" bindValue="id"
+                            placeholder="">
+                        </ng-select>
+                    </div>
+
+                    <div class="button-cont">
+                        <button type="submit" class="save-continue" routerLink="/step3">
+                            Save & Continue</button>
+                    </div>
+                    <div class="secure">
+                        <img src="../../assets/images/lock_24px.png" alt="">
+                        <p>Your Info is safely secured</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

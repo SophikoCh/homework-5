@@ -1,0 +1,90 @@
+<section>
+    <div class="img-box">
+        <img src="../../assets/images/default.png" alt="">
+    </div>
+    <div class="step-1">
+        <div class="header">
+            <button class="back" routerLink="/joinUs">
+                <img src="../../assets/images/arrow_back_ios_24px.png" alt=""> Back
+            </button>
+            <div class="header-comp">
+                <p>STEP 01/03</p>
+                <p class="personal-inf">Bank Verification</p>
+            </div>
+        </div>
+
+        <div class="registration-form">
+            <h1>Register Individual Account!</h1>
+            <p>For the purpose of industry regulation, your details are required.</p>
+            <div class="line-box"></div>
+
+            <form action="" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="input-box">
+                    <div class="form-group">
+                        <div class="label-fix">
+                            <label for="fullname">Your fullname*</label>
+                            <input id="fullname" type="text" formControlName="fullName" placeholder="Invictus Innocent">
+                        </div>
+                        <div class="errors" *ngIf="fullName?.invalid && (fullName?.dirty || fullName?.touched)">
+                            <p *ngIf="fullName?.errors?.['required']">Full name input is required</p>
+                            <p *ngIf="fullName?.errors?.['minlength']">User name must be at least 4 characters long</p>
+                            <p *ngIf="fullName?.errors?.['maxlength']">User name must not be more than 17 characters
+                                long </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-fix">
+                            <label for="email">Email address*</label>
+                            <input id="email" type="text" formControlName="email" placeholder="Enter email address">
+                        </div>
+                        <div class="errors" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                            <p *ngIf="email?.errors?.['required']">Email Id is required</p>
+                            <p *ngIf="email?.errors?.['email']">Please enter valid Email Id</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="label-fix">
+                            <label for="password">Create password*</label>
+                            <input id="password" type="password" formControlName="password"
+                                placeholder="Enter password">
+                        </div>
+                        <div class="errors" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                            <p *ngIf="password?.errors?.['required']">Password is required</p>
+                            <p *ngIf="password?.errors?.['pattern']">Password must contain uppercase letter, punctuation
+                                mark and number</p>
+                            <p *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters long</p>
+                            <p *ngIf="password?.errors?.['maxlength']">Password must not be more then 8 characters long
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <input formControlName="checkbox" id="checkbox" type="checkbox">
+                        <label for="checkbox">I agree to terms & conditions</label>
+                    </div>
+                    <div class="errors" *ngIf="checkbox?.invalid && (checkbox?.dirty || checkbox?.touched)">
+                        <p *ngIf="checkbox?.invalid && checkbox?.errors?.['required']"> it must be marked</p>
+                    </div>
+
+                </div>
+                <div class="buttons">
+                    <button routerLink="/step2" class="register" [disabled]="registerForm.invalid || registerForm.pristine">
+                        Register Account</button>
+                    <div class="or">
+
+                        <div class="line-style"></div>
+                        <span> Or </span>
+                        <div class="line-style"></div>
+
+                    </div>
+                    <button class="google"> <img src="../../assets/images/flat-color-icons_google.png" alt=""> Register
+                        with Google</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

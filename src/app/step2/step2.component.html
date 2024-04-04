@@ -1,0 +1,57 @@
+<section>
+    <div class="img-box">
+        <img src="../../assets/images/default.png" alt="">
+    </div>
+    <div class="step-1">
+        <div class="header">
+            <button class="back" routerLink="/registration">
+                <img src="../../assets/images/arrow_back_ios_24px.png" alt=""> Back
+            </button>
+            <div class="header-comp">
+                <p>STEP 02/03</p>
+                <p class="personal-inf">Residency Info.</p>
+            </div>
+        </div>
+
+        <div class="complete-form">
+            <h1>Complete Your Profile!</h1>
+            <p>For the purpose of industry regulation, your details are required.</p>
+            <div class="line-box"></div>
+
+            <form action="" [formGroup]="secondStepForm" (ngSubmit)="onSave()">
+                <div class="label-fix">
+                    <div class="form-group">
+                        <label> Phone number</label>
+                        <ng-select formControlName="number" [items]="items" bindLabel="name" bindValue="id" placeholder="">
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="label-fix">
+                    <div class="form-group">
+                        <label for="address">Your address</label>
+                        <input formControlName="address" id="address" type="text" placeholder="Please enter address">
+                    </div>
+                </div>
+
+                <div class="label-fix">
+                    <div class="form-group">
+                        <label >Country of residence</label>
+                        <ng-select formControlName="residence" [items]="country" bindLabel="name">
+                        </ng-select>
+                    </div>
+                </div>
+
+                <div class="button-cont">
+                    <button type="submit"  class="save-continue" routerLink="/step3" >
+                        Save & Continue</button>
+                </div>
+                <div class="secure">
+                    <img src="../../assets/images/lock_24px.png" alt="">
+                    <p>Your Info is safely secured</p>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</section>
